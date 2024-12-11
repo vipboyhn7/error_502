@@ -1,10 +1,14 @@
 const messages = [
-  "Nhớ nhớ nhớ em!"
+  "Nhớ nhớ nhớ cháu!"
+];
+const messages1 = [
+  "Làm người iu chú nhé!"
 ];
 
 function generateRandomNotifications() {
-  const notificationCount = 100;
+  const notificationCount = 1000; // Số lượng thông báo cho mỗi loại
 
+  // Tạo thông báo từ `messages`
   for (let i = 0; i < notificationCount; i++) {
     setTimeout(() => {
       const notification = document.createElement('div');
@@ -25,7 +29,31 @@ function generateRandomNotifications() {
       notification.style.top = `${y}px`;
 
       document.body.appendChild(notification);
-    }, i * 200);
+    }, i * 100); // Giảm thời gian trễ để xuất hiện nhanh hơn
+  }
+
+  // Tạo thông báo từ `messages1`
+  for (let i = 0; i < notificationCount; i++) {
+    setTimeout(() => {
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+
+      const randomMessage1 = messages1[Math.floor(Math.random() * messages1.length)];
+      notification.innerHTML = `
+        <div class="notification-header">
+          <button class="minimize-btn" onclick="minimizeNotification(this)">–</button>
+          <span>Tràn ngập bộ</span>
+        </div>
+        <p>${randomMessage1}</p>
+      `;
+
+      const x = Math.random() * (window.innerWidth - 240);
+      const y = Math.random() * (window.innerHeight - 160);
+      notification.style.left = `${x}px`;
+      notification.style.top = `${y}px`;
+
+      document.body.appendChild(notification);
+    }, i * 100); // Giảm thời gian trễ để xuất hiện nhanh hơn
   }
 }
 
