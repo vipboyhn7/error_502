@@ -18,7 +18,7 @@ const messages = [
        notification.innerHTML = `
          <div class="notification-header">
            <button class="minimize-btn" onclick="minimizeNotification(this)">–</button>
-           <span>Tràn ngập bộ</span>
+           <span>Tràn ngập bộ nhớ</span>
          </div>
          <p>${randomMessage}</p>
        `;
@@ -42,7 +42,7 @@ const messages = [
        notification.innerHTML = `
          <div class="notification-header">
            <button class="minimize-btn" onclick="minimizeNotification(this)">–</button>
-           <span>Tràn ngập bộ</span>
+           <span>Tràn ngập bộ nhớ</span>
          </div>
          <p>${randomMessage1}</p>
        `;
